@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'tweets/new'
+
+  get 'tweets/create'
+
+  get 'session/new'
+
+  get 'session/create'
+
+  get 'session/destroy'
+
+  get 'home/show'
+
   resources :users, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

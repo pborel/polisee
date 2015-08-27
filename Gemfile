@@ -9,6 +9,7 @@ gem 'sunlight'
 
 gem 'foundation-rails'
 
+gem 'twitter', '~> 5.3.1'
 gem 'omniauth-twitter'
 
 gem 'rack-cors', :require => 'rack/cors'
