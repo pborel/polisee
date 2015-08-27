@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'react-rails', '~> 1.0'
+gem 'rails', '4.2.3'
+gem 'rails-api'
+gem 'react-router-rails', '~>0.13.3.1'
 
 gem 'sunlight'
 
-gem 'rails', '4.2.3'
+gem 'foundation-rails'
 
-gem 'rails-api'
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'spring', :group => :development
 

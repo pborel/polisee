@@ -1,6 +1,6 @@
 # PoliSee
 
-Empowers citizens by connecting issues they care about with the representatives who vote on them. Built with React and Rails by @mikey4XU, @d0ntg0m0ng, @posthumus4, @emiliocorprus, @pborel.
+Empowers citizens by connecting them with issues they care about and the representatives who vote on them. Built with React and Rails by @mikey4XU, @d0ntg0m0ng, @posthumus4, @emiliocorprus, @pborel.
 
 ## Oauth - Twitter
 ### 3-legged authorization
