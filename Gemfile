@@ -9,6 +9,8 @@ gem 'sunlight'
 
 gem 'foundation-rails'
 
+gem 'omniauth-twitter'
+
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'spring', :group => :development
