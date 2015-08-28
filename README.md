@@ -1,6 +1,11 @@
 # PoliSee
 
-Empowers citizens by connecting them with issues they care about and the representatives who vote on them. Built with React and Rails by @mikey4XU, @d0ntg0m0ng, @posthumus4, @emiliocorprus, @pborel.
+Empowers citizens by connecting them with issues they care about and the representatives who vote on them. Built with React and Rails by @mikey2XU, @d0ntg0m0ng, @posthumus4, @emiliocorprus, @pborel.
+
+##Basic UI Layout - Wireframe:
+
+![Polisee Wireframe](./public/imgs/Polisee-Wireframe.png "Polisee Wireframe")
+
 
 ## Oauth - Twitter
 ### 3-legged authorization
@@ -11,4 +16,6 @@ The user will always be prompted to authorize access to your application, even i
 The possible states for the 3-legged sign in interaction are illustrated in the following flowchart:
 
 ![Twitter Oauth Flow](./public/imgs/twitter-oauth-flow.png "Twitter Oauth Flow")
+
+
 
