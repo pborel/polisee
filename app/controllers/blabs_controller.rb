@@ -19,4 +19,5 @@ private
   def blab_params
     params.require(:blab).permit(:content)
   end
+
 end
