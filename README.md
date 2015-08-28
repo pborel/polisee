@@ -1,20 +1,11 @@
-# PoliSee
+WTF
+---------------
+A finished example of a stateless Ruby API using the rails-api gem, with a React client side app. To fit the definition of stateless, the API does not include action-view, sprockets, or sessions. Roughly speaking, React replaces action-view, Webpack replaces sprockets, and JWT replaces sessions.
 
-Empowers citizens by connecting them with issues they care about and the representatives who vote on them. Built with React and Rails by @mikey2XU, @d0ntg0m0ng, @posthumus4, @emiliocorprus, @pborel.
+Installation
+---------------
+There's a detailed tutorial on how to build this project at: http://fredguest.com/2015/03/06/building-a-stateless-rails-api-with-react-and-twitter-oauth/
 
-##Basic UI Layout - Wireframe:
-
-![Polisee Wireframe](./public/imgs/polisee-wireframe.png "polisee-wireframe")
-
-
-## Oauth - Twitter
-### 3-legged authorization
-The 3-legged OAuth flow allows your application to obtain an access token by redirecting a user to Twitter and having them authorize your application. This flow is almost identical to the flow described in Implementing Sign in with Twitter, with two exceptions:
-
-The GET oauth/authorize endpoint is used instead of GET oauth/authenticate
-The user will always be prompted to authorize access to your application, even if access was previously granted.
-The possible states for the 3-legged sign in interaction are illustrated in the following flowchart:
-
-![Twitter Oauth Flow](./public/imgs/twitter-oauth-flow.png "Twitter Oauth Flow")
-
-Tutorial: https://richonrails.com/articles/sending-a-tweet-to-twitter
+Demo
+---------------
+There's a live demo of the finished project at: https://blabs.herokuapp.com
