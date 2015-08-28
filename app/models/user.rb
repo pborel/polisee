@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+  validates :auth_token, uniqueness: true
+  before_create :generate_authentication_token!
+
+  def generate_authentication_token!
+    begin
+      self.auth_token = Devise.friendly_token
+    end while self.class.exists?(auth_token: auth_token)
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
