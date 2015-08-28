@@ -4,7 +4,7 @@ Empowers citizens by connecting them with issues they care about and the represe
 
 ##Basic UI Layout - Wireframe:
 
-![Polisee Wireframe](./public/imgs/Polisee-Wireframe.png "Polisee Wireframe")
+![Polisee Wireframe](./public/imgs/Polisee-Wireframe.png "polisee-wireframe")
 
 
 ## Oauth - Twitter
