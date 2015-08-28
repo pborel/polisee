@@ -1,3 +1,5 @@
+$( document ).ready(getLocation())
+
 function getLocation() {
         navigator.geolocation.getCurrentPosition(setGeoCookie);
     }
