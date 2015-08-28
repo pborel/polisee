@@ -17,5 +17,4 @@ The possible states for the 3-legged sign in interaction are illustrated in the 
 
 ![Twitter Oauth Flow](./public/imgs/twitter-oauth-flow.png "Twitter Oauth Flow")
 
-
-
+Tutorial: https://richonrails.com/articles/sending-a-tweet-to-twitter
