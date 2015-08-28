@@ -2,7 +2,17 @@
 
 Empowers citizens by connecting them with issues they care about and the representatives who vote on them. Built with React and Rails by @mikey2XU, @d0ntg0m0ng, @posthumus4, @emiliocorprus, @pborel.
 
-##Basic UI Layout - Wireframe:
+## Set Up
+Ruby version: 2.2.0
+
+How to change Ruby version: http://makandracards.com/makandra/21545-rbenv-how-to-switch-to-another-ruby-version-temporarily-per-project-or-globally
+
+```$ rbenv global 2.0.0-p353
+$ ruby -v
+ruby 2.0.0p353 (...)```
+
+
+## Basic UI Layout - Wireframe:
 
 ![Polisee Wireframe](./public/imgs/polisee-wireframe.png "polisee-wireframe")
 
@@ -17,4 +27,10 @@ The possible states for the 3-legged sign in interaction are illustrated in the 
 
 ![Twitter Oauth Flow](./public/imgs/twitter-oauth-flow.png "Twitter Oauth Flow")
 
-Tutorial: https://richonrails.com/articles/sending-a-tweet-to-twitter
+## Tutorials:
+### Decoupled Rails / React & Twitter integration
+https://richonrails.com/articles/sending-a-tweet-to-twitter
+
+http://fredguest.com/2015/03/06/building-a-stateless-rails-api-with-react-and-twitter-oauth/
+
+
