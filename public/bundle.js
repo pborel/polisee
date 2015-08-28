@@ -87,8 +87,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/apprentice/Desktop/rails-api-react-demo-finished/node_modules/css-loader/index.js!/Users/apprentice/Desktop/rails-api-react-demo-finished/client/assets/app.css", function() {
-			var newContent = require("!!/Users/apprentice/Desktop/rails-api-react-demo-finished/node_modules/css-loader/index.js!/Users/apprentice/Desktop/rails-api-react-demo-finished/client/assets/app.css");
+		module.hot.accept("!!/Users/apprentice/Desktop/polisee/node_modules/css-loader/index.js!/Users/apprentice/Desktop/polisee/client/assets/app.css", function() {
+			var newContent = require("!!/Users/apprentice/Desktop/polisee/node_modules/css-loader/index.js!/Users/apprentice/Desktop/polisee/client/assets/app.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -346,8 +346,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/apprentice/Desktop/rails-api-react-demo-finished/node_modules/css-loader/index.js!/Users/apprentice/Desktop/rails-api-react-demo-finished/client/assets/menu.css", function() {
-			var newContent = require("!!/Users/apprentice/Desktop/rails-api-react-demo-finished/node_modules/css-loader/index.js!/Users/apprentice/Desktop/rails-api-react-demo-finished/client/assets/menu.css");
+		module.hot.accept("!!/Users/apprentice/Desktop/polisee/node_modules/css-loader/index.js!/Users/apprentice/Desktop/polisee/client/assets/menu.css", function() {
+			var newContent = require("!!/Users/apprentice/Desktop/polisee/node_modules/css-loader/index.js!/Users/apprentice/Desktop/polisee/client/assets/menu.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -382,8 +382,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/apprentice/Desktop/rails-api-react-demo-finished/node_modules/css-loader/index.js!/Users/apprentice/Desktop/rails-api-react-demo-finished/client/assets/blabs.css", function() {
-			var newContent = require("!!/Users/apprentice/Desktop/rails-api-react-demo-finished/node_modules/css-loader/index.js!/Users/apprentice/Desktop/rails-api-react-demo-finished/client/assets/blabs.css");
+		module.hot.accept("!!/Users/apprentice/Desktop/polisee/node_modules/css-loader/index.js!/Users/apprentice/Desktop/polisee/client/assets/blabs.css", function() {
+			var newContent = require("!!/Users/apprentice/Desktop/polisee/node_modules/css-loader/index.js!/Users/apprentice/Desktop/polisee/client/assets/blabs.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
