@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -22,20 +22,20 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
-  # Debug mode disables concatenation and preprocessing of assets.
-  # This option may cause significant delays in view rendering with a large
-  # number of complex assets.
-  config.assets.debug = true
-
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  config.assets.digest = true
-
-  # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Set Sunlight API config
+  ENV['SUNLIGHT_KEY'] = "6f32253a69584783ba98cbf86120d2d7"
+
+  # Set environment secrets
+  ENV['ORIGIN'] = 'http://localhost:8080'
+  ENV['OAUTH_CALLBACK'] = 'http://127.0.0.1:3000/access_token'
+  ENV['SECRET_KEY_BASE'] = '493f5c5a69827e7508a85069e7b0f15d0e856d5ca4faab444b8a97520b559ee316a89419ecd5f0cdca9d6e41f86ee89b040b24e6dcfa2b416ba5895bd86eaff0'
+  ENV['TWITTER_CONSUMER_KEY'] = 'gCo5L3RMyftUepC70zPPt9j2d'
+  ENV['TWITTER_CONSUMER_SECRET'] = 'urq8nx4QlRkdi1zBbvlrNFr2e2CSflvLwqOHQjWEyAd3F6ix8R'
+
+
+
 end

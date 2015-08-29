@@ -1,38 +1,114 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
-  <link rel="stylesheet" type="text/css" href="./stylesheets/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <meta charset="utf-8">
+  <title>Blabber</title>
+  <meta name="description" content="an app for blabbing">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/0.13.3/ReactRouter.js"></script> -->
-
-  <meta name="viewport" content="width=700">
-
-  <title>Polisee - Power to the People</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css" rel="stylesheet">
 </head>
 <body>
+  <div id="content"></div>
+    <script type="text/jsx">
+      var ArticleContainer = React.createClass({
+        render: function(){
+          return (
+            <div>
+              <SearchBar />
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        Tweeter
-      </a>
-      </div>
-    </div>
-  </nav>
+              <ArticleBox url={this.props.url}/>
+            </div>
+          )
+        }
+      });
 
-  <p>You must log in to send a tweet.</p>
+      var SearchBar = React.createClass({
+        render: function(){
+          return (
+            <div>
+              <input type="text" placeholder="search by bill or topic"></input>
+            </div>
+          )
+        }
+      });
 
-  <p>Send a tweet to your representative:</p>
-  <form action="" method="post">
-    <input type="text" name="tweet"></input>
-    <input type="submit" value="Tweet">
-  </form>
+      var ArticleBox = React.createClass({
+        getInitialState: function() {
+            return {data: []};
+        },
 
+        loadArticlesFromServer: function() {
+          $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: function(data) {
+              this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.error(this.props.url, status, err.toString());
+            }.bind(this)
+          });
+        },
+        componentDidMount: function() {
+          this.loadArticlesFromServer();
+        },
+
+        render: function() {
+          return (
+            <div>
+              <ArticlesList data={this.state.data} />
+            </div>
+          )
+        }
+      });
+
+      var ArticlesList = React.createClass({
+        render: function() {
+          var articleNodes = this.props.data.map(function(article) {
+            return (
+              <Article>
+                {article.birthday}
+              </Article>
+            )
+          });
+
+          return (
+            <div>
+              {articleNodes}
+            </div>
+          );
+        }
+      });
+
+      var Article = React.createClass({
+        render: function() {
+          return (
+            <div>
+              {this.props.children}
+            </div>
+          )
+        }
+      })
+
+      React.render(
+        <ArticleContainer url="http://localhost:3000/legislators.json"/>,
+        document.getElementById('content')
+      )
+    </script>
+    <div>Test, bitches</div>
+
+<!--   // <script src="bundle.js"></script>
+  // <script src ="./Geolocate.js"> </script>
+ -->  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css"> -->
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script> -->
 </body>
 </html>
+
 
