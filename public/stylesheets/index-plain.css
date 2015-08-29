@@ -57,3 +57,12 @@ html {
 .rep-profiles-container {
   text-align: center;
 }
+
+.rep-image {
+    display: block;
+    margin: 25px auto;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
