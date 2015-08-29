@@ -9,8 +9,16 @@ module Sun
       self.class.get("/legislators/locate", headers: headers, query: {zip: zip})
     end
 
-    def all_legislators
-      self.class.get("/legislators", headers: headers)
+    def all_legislators(page)
+        self.class.get("/legislators", headers: headers, query: {per_page: 50, page: page})
+    end
+
+    def bills
+      self.class.get("/bills", headers: headers)
+    end
+
+    def bill(bill_id)
+      self.class.get('/bills', headers: headers, query: {bill_id: bill_id})
     end
 
     def token
@@ -21,10 +29,9 @@ module Sun
       {"X-APIKEY" => token}
     end
 
-    def bills
-      p "I am the bill @@@@@@@@@@@@"
-      self.class.get("/bills", headers: headers)
-    end
+    # def page_data(page)
+    #   {per_page: 50, page: page}
+    # end
 
   end
 
