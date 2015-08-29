@@ -1,15 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Blabber</title>
-    <meta name="description" content="an app for blabbing">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css" rel="stylesheet">
-  </head>
-  <body>
-    <script src="bundle.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Blabber</title>
+  <meta name="description" content="an app for blabbing">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="content"></div>
+    <script type="text/jsx">
+      var ArticleContainer = React.createClass({
+        render: function(){
+          return (
+            <div>
+              <SearchBar />
+
+              <ArticleBox url={this.props.url}/>
+            </div>
+          )
+        }
+      });
+
+      var SearchBar = React.createClass({
+        render: function(){
+          return (
+            <div>
+              <input type="text" placeholder="search by bill or topic"></input>
+            </div>
+          )
+        }
+      });
+
+      var ArticleBox = React.createClass({
+        getInitialState: function() {
+            return {data: []};
+        },
+
+        loadArticlesFromServer: function() {
+          $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: function(data) {
+              this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+              console.error(this.props.url, status, err.toString());
+            }.bind(this)
+          });
+        },
+        componentDidMount: function() {
+          this.loadArticlesFromServer();
+        },
+
+        render: function() {
+          return (
+            <div>
+              <ArticlesList data={this.state.data} />
+            </div>
+          )
+        }
+      });
+
+      var ArticlesList = React.createClass({
+        render: function() {
+          var articleNodes = this.props.data.map(function(article) {
+            return (
+              <Article>
+                {article.sponsor_id}
+              </Article>
+            )
+          });
+
+          return (
+            <div>
+              {articleNodes}
+            </div>
+          );
+        }
+      });
+
+      var Article = React.createClass({
+        render: function() {
+          return (
+            <div>
+              {this.props.children}
+            </div>
+          )
+        }
+      })
+
+      React.render(
+        <ArticleContainer url="a.json"/>,
+        document.getElementById('content')
+      )
+    </script>
+    <div>Test, bitches</div>
+
+<!--   // <script src="bundle.js"></script>
+  // <script src ="./Geolocate.js"> </script>
+ -->  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css"> -->
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script> -->
+</body>
 </html>
 
-<script src ="./Geolocate.js"> </script>
+

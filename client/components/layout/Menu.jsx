@@ -18,9 +18,8 @@ module.exports = React.createClass({
       <nav>
         <span id="menu-link" onClick={this.props.sendMenuClick}><span></span></span>
         <div className="nav-wrapper">
-          <a href="#" class="brand-logo">Blabs</a>
-          // <span className="pure-menu-heading">Polisee</span>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <a href="#" className="brand-logo">Blabs</a>
+          <ul id="nav" className="right hide-on-med-and-down">
             <li><Link to="blabs">Blabs</Link></li>
             <li><Link to="about">About</Link></li>
             {signingLink}

@@ -9,6 +9,7 @@ class LegislatorsController < ApplicationController
     bill_search = client.bills
     @all_bills = JSON.parse(bill_search.body)
     p @all_bills
+    render json: @all_bills
   end
 
   def show
