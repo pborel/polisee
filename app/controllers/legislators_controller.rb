@@ -10,9 +10,5 @@ class LegislatorsController < ApplicationController
 
   end
 
-  def images
-    @images = Legislator.query_twitter_images
-    render json: @images
-  end
 end
 

@@ -17,7 +17,7 @@ var ArticleBox = React.createClass({
     return {data: []};
   },
 
-  loadRepresentativesFromServer: function() {
+  loadArticlesFromServer: function() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -137,7 +137,7 @@ var RepresentativeContainer = React.createClass({
     return (
       <div>
         <SearchBar />
-        <RepresentativeBox url={this.props.url} image_url={this.props.image_url} />
+        <RepresentativeBox url={this.props.url} />
       </div>
     )
   }
@@ -162,23 +162,8 @@ var RepresentativeBox = React.createClass({
     });
   },
 
-  loadImagesFromServer: function() {
-    $.ajax({
-      url: this.props.image_url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-
   componentDidMount: function() {
     this.loadRepresentativesFromServer();
-    this.loadImagesFromServer();
   },
 
   render: function() {
@@ -193,6 +178,7 @@ var RepresentativesList = React.createClass({
     var representativeNodes = this.props.data.map(function(representative) {
       return (
         <Representative key={representative.id}>
+          <img className="rep-image" src={representative.image} />
           <a href="#">{representative.first_name} {representative.last_name}</a>
           <span> -- <a href="#">{representative.twitter_id}</a> </span>
         </Representative>
@@ -224,7 +210,7 @@ React.render(
 )
 
 React.render(
-  <RepresentativeContainer url="http://localhost:3000/legislators.json" image_url="" />,
+  <RepresentativeContainer url="http://localhost:3000/legislators.json" />,
   document.getElementById('representatives')
 )
 
