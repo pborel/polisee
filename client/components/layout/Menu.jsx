@@ -15,19 +15,18 @@ module.exports = React.createClass({
     }
 
     return (
-      <div id="menu">
+      <nav>
         <span id="menu-link" onClick={this.props.sendMenuClick}><span></span></span>
-        <div id="menu-list">
-          <div className="pure-menu pure-menu-open">
-            <span className="pure-menu-heading">Blabber</span>
-            <ul>
-              <li><Link to="blabs">Blabs</Link></li>
-              <li><Link to="about">About</Link></li>
-              {signingLink}
-            </ul>
-          </div>
+        <div className="nav-wrapper">
+          <a href="#" class="brand-logo">Blabs</a>
+          // <span className="pure-menu-heading">Polisee</span>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><Link to="blabs">Blabs</Link></li>
+            <li><Link to="about">About</Link></li>
+            {signingLink}
+          </ul>
         </div>
-      </div>
+      </nav>
     );
   }
 });
