@@ -25424,9 +25424,8 @@
 	      React.createElement("nav", null, 
 	        React.createElement("span", {id: "menu-link", onClick: this.props.sendMenuClick}, React.createElement("span", null)), 
 	        React.createElement("div", {className: "nav-wrapper"}, 
-	          React.createElement("a", {href: "#", class: "brand-logo"}, "Blabs"), 
-	          "// ", React.createElement("span", {className: "pure-menu-heading"}, "Polisee"), 
-	          React.createElement("ul", {id: "nav-mobile", class: "right hide-on-med-and-down"}, 
+	          React.createElement("a", {href: "#", className: "brand-logo"}, "Blabs"), 
+	          React.createElement("ul", {id: "nav", className: "right hide-on-med-and-down"}, 
 	            React.createElement("li", null, React.createElement(Link, {to: "blabs"}, "Blabs")), 
 	            React.createElement("li", null, React.createElement(Link, {to: "about"}, "About")), 
 	            signingLink
@@ -25586,6 +25585,7 @@
 	    );
 	  }
 	});
+	
 
 
 /***/ }

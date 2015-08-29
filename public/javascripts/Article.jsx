@@ -1,3 +1,5 @@
+
+
    var ArticleContainer = React.createClass({
     render: function(){
       return (
@@ -76,3 +78,5 @@
     <ArticleContainer url="http://localhost:3000/bills.json" />,
     document.getElementById('content')
     )
+
+   module.exports =
