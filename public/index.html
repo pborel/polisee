@@ -71,7 +71,7 @@
           var articleNodes = this.props.data.map(function(article) {
             return (
               <Article>
-                {article.sponsor_id}
+                {article.birthday}
               </Article>
             )
           });
@@ -95,7 +95,7 @@
       })
 
       React.render(
-        <ArticleContainer url="a.json"/>,
+        <ArticleContainer url="http://localhost:3000/legislators.json"/>,
         document.getElementById('content')
       )
     </script>
