@@ -9,6 +9,7 @@ gem 'puma'
 gem 'jwt'
 gem 'pg'
 gem 'httparty'
+gem 'twitter'
 
 group :production do
   gem 'rails_12factor'

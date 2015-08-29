@@ -5,12 +5,16 @@ module Sun
 
     base_uri 'https://congress.api.sunlightfoundation.com/'
 
-    def local_politicians(zip)
+    def local_legislators(zip)
       self.class.get("/legislators/locate", headers: headers, query: {zip: zip})
     end
 
+    def all_legislators
+      self.class.get("/legislators", headers: headers)
+    end
+
     def token
-      "6f32253a69584783ba98cbf86120d2d7"
+      ENV['SUNLIGHT_KEY']
     end
 
     def headers

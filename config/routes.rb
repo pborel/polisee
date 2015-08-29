@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'access_token', to: 'tokens#access_token'
   get 'client_token', to: 'tokens#client_token'
 
+  get 'twitter_callback', to: 'tokens#twitter_callback'
+
   resources :blabs, only: [:index, :create, :show]
   resources :legislators, only: [:index, :show]
   resources :bills, only: [:index, :show]
