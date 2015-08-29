@@ -22,7 +22,6 @@ module Sun
     end
 
     def bills
-      p "I am the bill @@@@@@@@@@@@"
       self.class.get("/bills", headers: headers)
     end
 
