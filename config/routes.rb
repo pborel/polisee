@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :blabs, only: [:index, :create, :show]
   resources :legislators, only: [:index, :show]
+  get 'images', to: 'legislators#images'
   resources :bills, only: [:index, :show]
 
   match '*all', to: 'application#index', via: [:get]
