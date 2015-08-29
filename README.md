@@ -7,9 +7,11 @@ Ruby version: 2.2.0
 
 How to change Ruby version: http://makandracards.com/makandra/21545-rbenv-how-to-switch-to-another-ruby-version-temporarily-per-project-or-globally
 
-```$ rbenv global 2.0.0-p353
+```$ rbenv global 2.2.0
+
 $ ruby -v
-ruby 2.0.0p353 (...)```
+
+ruby 2.2.0```
 
 
 ## Basic UI Layout - Wireframe:
