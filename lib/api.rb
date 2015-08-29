@@ -2,6 +2,15 @@ module Api
   include Sunlight
   include Twitter
 
+## Next refactoring is to implement one method to refresh data
+
+ #  def refresh_legislator_data
+ #    self.query_sunlight_data
+ #    self.query_twitter_images
+ #  end
+
+ # private
+
   def self.query_sunlight_data
     sunlight_client = Congress.new
     (1..11).each do |page_number|
