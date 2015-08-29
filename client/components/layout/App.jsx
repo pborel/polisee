@@ -3,6 +3,7 @@ var React = require('react');
 var Reqwest = require('reqwest');
 var Menu = require('./Menu.jsx');
 var Router = require('react-router');
+var routes = require('./config/routes.jsx')
 var RouteHandler = Router.RouteHandler;
 
 module.exports = React.createClass({
@@ -68,4 +69,10 @@ module.exports = React.createClass({
       </div>
     );
   }
+});
+
+
+
+Router.run(routes, function(Root){
+  React.render(<Main />, document.getElementById('app'));
 });
