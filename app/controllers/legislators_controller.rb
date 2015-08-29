@@ -1,4 +1,5 @@
 class LegislatorsController < ApplicationController
+
   include Sunlight
 
   def index
@@ -38,5 +39,6 @@ private
   def create_sunlight_connection
     Congress.new
   end
+
 end
 
