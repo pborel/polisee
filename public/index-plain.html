@@ -10,80 +10,7 @@
 
 </head>
 <body>
-  <div id="content"></div>
-    <script type="text/jsx">
-      var ArticleContainer = React.createClass({
-        render: function(){
-          return (
-            <div>
-              <SearchBar />
-
-              <ArticlesList url={this.props.url}/>
-            </div>
-          )
-        }
-      })
-
-      var SearchBar = React.createClass({
-        render: function(){
-          return (
-            <div>
-              <input type="text" placeholder="search by bill or topic"></input>
-            </div>
-          )
-        }
-      })
-
-      var ArticlesList = React.createClass({
-        getInitialState: function() {
-            return {data: []};
-          },
-        componentDidMount: function() {
-            $.ajax({
-              url: this.props.url,
-              dataType: 'json',
-              cache: false,
-              success: function(data) {
-                this.setState({data: data});
-              }.bind(this),
-              error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-              }.bind(this)
-            });
-          },
-
-        render: function() {
-          var articleNodes = this.data.map(function(article) {
-            return (
-              < Article > {article.sponsor_id} </Article>
-            )
-          })
-
-          return (
-            {articleNodes}
-          )
-        }
-
-      })
-
-      var Article = React.createClass({
-        render: function() {
-
-          return (
-            <div>
-              {this.props.children}
-            </div>
-          )
-        }
-      })
-
-      React.render(
-        <ArticleContainer url="/legislators.json"/>,
-        document.getElementById('content')
-      )
-    </script>
-
-  <!-- <div class="page-container debugger">
+  <div class="page-container debugger">
 
     <div class="nav debugger">
       <span>
@@ -134,6 +61,6 @@
       </div>
 
     </div>
-  </div> -->
+  </div>
 </body>
 </html>
