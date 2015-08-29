@@ -1,6 +1,5 @@
 class BillsController < ApplicationController
-
-  include Sun
+  include Sunlight
 
   def index
     sunlight_client = Congress.new
@@ -10,7 +9,9 @@ class BillsController < ApplicationController
   end
 
   def show
-
+    sunlight_client = Congress.new
+    @bill = sunlight_client.bill(params[bill_id:])
+    render json: @bill
   end
 
 end
