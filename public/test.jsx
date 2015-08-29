@@ -17,7 +17,7 @@ var ArticleBox = React.createClass({
     return {data: []};
   },
 
-  loadArticlesFromServer: function() {
+  loadRepresentativesFromServer: function() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -137,7 +137,7 @@ var RepresentativeContainer = React.createClass({
     return (
       <div>
         <SearchBar />
-        <RepresentativeBox url={this.props.url} />
+        <RepresentativeBox url={this.props.url} image_url={this.props.image_url} />
       </div>
     )
   }
@@ -148,7 +148,7 @@ var RepresentativeBox = React.createClass({
     return {data: []};
   },
 
-  loadArticlesFromServer: function() {
+  loadRepresentativesFromServer: function() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -162,8 +162,23 @@ var RepresentativeBox = React.createClass({
     });
   },
 
+  loadImagesFromServer: function() {
+    $.ajax({
+      url: this.props.image_url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+
   componentDidMount: function() {
-    this.loadArticlesFromServer();
+    this.loadRepresentativesFromServer();
+    this.loadImagesFromServer();
   },
 
   render: function() {
@@ -209,7 +224,7 @@ React.render(
 )
 
 React.render(
-  <RepresentativeContainer url="http://localhost:3000/legislators.json" />,
+  <RepresentativeContainer url="http://localhost:3000/legislators.json" image_url="" />,
   document.getElementById('representatives')
 )
 
