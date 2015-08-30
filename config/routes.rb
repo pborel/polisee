@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'client_token', to: 'tokens#client_token'
 
   get 'twitter_callback', to: 'tokens#twitter_callback'
-
+  
+  post 'notifications/notify' => 'notifications#notify'
+  
   resources :blabs, only: [:index, :create, :show]
   resources :legislators, only: [:index, :show]
   resources :bills, only: [:index, :show]

@@ -10,6 +10,7 @@ gem 'jwt'
 gem 'pg'
 gem 'httparty'
 gem 'twitter'
+gem 'twilio-ruby', '~> 3.12'
 
 group :production do
   gem 'rails_12factor'
